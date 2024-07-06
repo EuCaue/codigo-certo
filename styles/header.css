@@ -1,0 +1,30 @@
+header {
+  position: sticky;
+  top: 0;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 1rem;
+      padding: 0.525rem;
+
+      li {
+        font-size: 0.9rem;
+        color: lightgray;
+        font-family: monospace;
+        transition: color 2500ms ease;
+        :hover {
+          color: var(--accent);
+          border-bottom: solid 1px var(--foreground);
+          transition: color 200ms ease;
+        }
+      }
+    }
+  }
+}

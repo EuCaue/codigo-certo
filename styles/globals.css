@@ -1,0 +1,22 @@
+:root {
+  --background: #000000;
+  --accent: #e53939;
+  --foreground: #ffffff;
+}
+
+* {
+  scroll-snap-type: y mandatory;
+  scrollbar-width: 0;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  accent-color: var(--accent);
+  font-family: monospace;
+}
