@@ -1,0 +1,71 @@
+#gostos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 1.525rem;
+    font-weight: bold;
+    margin-bottom: 1.8rem;
+  }
+
+  .slider {
+    width: clamp(300px, 30vw, 30vw);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .slides::-webkit-scrollbar-thumb {
+    background: var(--background);
+    border-radius: 10px;
+  }
+
+  .slides::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: clamp(300px, 30vw, 30vw);
+    height: 300px;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+    border: 1px solid #cccccc70;
+
+    h2 {
+      font-size: 1.2rem;
+      font-style: italic;
+      text-decoration: underline blink var(--foreground);
+    }
+
+    p {
+      font-size: 1.0rem;
+      padding: 0 1rem;
+      text-align: left;
+      line-height: 1.3;
+    }
+
+  }
+}
