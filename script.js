@@ -9,8 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
   textsToHighlight.forEach((element) => {
     highlightText(element);
   });
-});
 
+  document.addEventListener("click", hideMenu);
+  document.addEventListener("contextmenu", rightClick);
+});
+//  TODO: animate closing the current menu
+function hideMenu() {
+  const menu = document.querySelector("#contextMenu");
+  menu.classList.add("animate-context-menu");
+  const id = setTimeout(() => {
+    menu.style.display = "none";
+    menu.classList.remove("animate-context-menu");
+  }, 500);
+  clearTimeout(id);
+}
+
+function rightClick(e) {
+  e.preventDefault();
+  const menu = document.querySelector("#contextMenu");
+  if (menu.style.display == "block") return hideMenu();
+  menu.style.display = "block";
+  menu.style.left = e.pageX + "px";
+  menu.style.top = e.pageY + "px";
+}
 
 function highlightText(element) {
   const originalText = element.textContent;
