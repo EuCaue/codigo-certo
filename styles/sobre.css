@@ -1,0 +1,23 @@
+#sobre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.525rem;
+    padding: 0 2rem;
+    max-width: 70ch;
+    height: 10rem;
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+}
+
+.highlighted {
+  color: gray;
+}
