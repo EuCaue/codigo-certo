@@ -1,0 +1,53 @@
+#info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+#info h1 {
+  font-size: 2.3rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1.525rem;
+}
+
+#info div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid var(--foreground);
+  padding: 1rem;
+  max-width: 90%;
+}
+
+#info div span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#info div span img {
+  width: 320px;
+  height: 320px;
+  border-radius: 5px;
+  
+}
+
+#info div span span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+#info div span span p {
+  font-size: min(5vw, 1.5rem);
+  font-style: italic;
+}
