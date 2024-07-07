@@ -13,15 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", hideMenu);
   document.addEventListener("contextmenu", rightClick);
 });
-//  TODO: animate closing the current menu
 function hideMenu() {
   const menu = document.querySelector("#contextMenu");
-  menu.classList.add("animate-context-menu");
-  const id = setTimeout(() => {
+  const isClickInside = menu.contains(event.target);
+  menu.classList.add("hidden");
+  setTimeout(() => {
     menu.style.display = "none";
-    menu.classList.remove("animate-context-menu");
-  }, 500);
-  clearTimeout(id);
+    menu.classList.remove("hidden");
+  }, 220);
 }
 
 function rightClick(e) {

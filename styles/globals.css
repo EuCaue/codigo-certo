@@ -55,16 +55,18 @@ main {
   height: 100dvh;
 }
 
-.animate-context-menu {
-  animation: close 500ms ease-in-out;
-}
-
 .context-menu {
   position: absolute;
   text-align: center;
   color: var(--background);
   background: var(--foreground);
   border: 1px solid black;
+  transition: transform 0.2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.context-menu.hidden {
+  transform: scaleY(0);
+  opacity: 0;
 }
 
 .context-menu ul {
