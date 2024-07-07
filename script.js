@@ -13,8 +13,44 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", hideMenu);
   document.addEventListener("contextmenu", rightClick);
   handleCarousel();
+  typeWriter();
 });
 
+function typeWriter() {
+  const words = [
+    "Quero participar da comunidade\n Codigo Certo Coders porque sou\n apaixonado por tecnologia e\n adoro colaborar com outros desenvolvedores. Quero \n aprender mais sobre frontend,\n compartilhar o que sei e fazer\n parte de projetos que\n realmente impactam. Estou \n animado para fazer parte de um\n grupo que valoriza o\n crescimento conjunto e a\n inovação ",
+  ];
+  const motivacaoSection = document.querySelector("#motivacao");
+  const text = motivacaoSection.querySelector("p");
+
+  const typewriter = async () => {
+    for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
+      const currentWord = words[wordIndex];
+      for (
+        let letterIndex = 0;
+        letterIndex <= currentWord.length;
+        letterIndex++
+      ) {
+        text.innerHTML =
+          currentWord.substring(0, letterIndex) + '<span class="caret"></span>';
+        await new Promise((resolve) => setTimeout(resolve, 80));
+      }
+    }
+  };
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          typewriter();
+          observer.unobserve(entry.target); // Para de observar após a primeira execução
+        }
+      });
+    },
+    { threshold: 0.9 },
+  ); // Chama a função quando 10% da seção estiver visível
+
+  observer.observe(motivacaoSection);
+}
 
 function handleCarousel() {
   const nextButton = document.querySelector("#next-carousel-item");
@@ -31,7 +67,6 @@ function handleCarousel() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         currentSlide = Number(entry.target.id.split("-")[1]);
-        console.log("Currently visible slide:", entry.target.id);
       }
     });
   }, observerOptions);
