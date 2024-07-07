@@ -16,6 +16,25 @@
     overflow: hidden;
   }
 
+  .slider .carousel-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    a {
+      display: block;
+      cursor: pointer;
+      transition:
+        font-weight 400ms,
+        zoom 400ms;
+      &:hover {
+        font-weight: bold;
+        zoom: 1.2;
+      }
+    }
+  }
+
   .slides {
     display: flex;
     overflow-x: auto;
@@ -61,11 +80,10 @@
     }
 
     p {
-      font-size: 1.0rem;
+      font-size: 1rem;
       padding: 0 1rem;
       text-align: left;
       line-height: 1.3;
     }
-
   }
 }

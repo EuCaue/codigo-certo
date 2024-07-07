@@ -12,7 +12,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("click", hideMenu);
   document.addEventListener("contextmenu", rightClick);
+  handleCarousel();
 });
+
+
+function handleCarousel() {
+  const nextButton = document.querySelector("#next-carousel-item");
+  const prevButton = document.querySelector("#prev-carousel-item");
+  const slides = document.querySelectorAll(".slides > div");
+  const observerOptions = {
+    root: document.querySelector(".slides"),
+    threshold: 0.5,
+  };
+
+  let currentSlide = 1;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        currentSlide = Number(entry.target.id.split("-")[1]);
+        console.log("Currently visible slide:", entry.target.id);
+      }
+    });
+  }, observerOptions);
+
+  slides.forEach((slide) => {
+    observer.observe(slide);
+  });
+
+  prevButton.addEventListener("click", () => {
+    if (currentSlide === 1) {
+      prevButton.href = "#slide-5";
+    } else {
+      prevButton.href = "#slide-" + (currentSlide - 1);
+    }
+  });
+
+  nextButton.addEventListener("click", () => {
+    if (currentSlide === 5) {
+      nextButton.href = "#slide-1";
+    } else {
+      nextButton.href = "#slide-" + (currentSlide + 1);
+    }
+  });
+}
+
 function hideMenu() {
   const menu = document.querySelector("#contextMenu");
   const isClickInside = menu.contains(event.target);
