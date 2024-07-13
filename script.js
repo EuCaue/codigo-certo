@@ -14,7 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("contextmenu", rightClick);
   handleCarousel();
   typeWriter();
+  handleFooter();
 });
+
+function handleFooter() {
+  const openFooterButton = document.querySelector(".open-footer-btn");
+  const openFooterButtonMenu = document.querySelector(".open-footer-btn-menu");
+  const dialog = document.querySelector("dialog");
+  const closeFooterButton = dialog.querySelector("footer button");
+  openFooterButton.addEventListener("click", () => dialog.showModal());
+  openFooterButtonMenu.addEventListener("click", () => dialog.showModal());
+  closeFooterButton.addEventListener("click", () => dialog.close());
+}
 
 function typeWriter() {
   const words = [
@@ -37,17 +48,18 @@ function typeWriter() {
       }
     }
   };
+
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           typewriter();
-          observer.unobserve(entry.target); // Para de observar após a primeira execução
+          observer.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.9 },
-  ); // Chama a função quando 10% da seção estiver visível
+  );
 
   observer.observe(motivacaoSection);
 }

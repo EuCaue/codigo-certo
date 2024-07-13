@@ -27,7 +27,7 @@
   .caret {
     display: inline-block;
     width: 1px;
-    height: 2.5rem;
+    height: min(6vw, 2rem);
     margin-left: -0.7rem;
     background-color: var(--foreground);
     animation: blink 1.5s ease-in-out infinite;

@@ -1,6 +1,7 @@
 header {
   position: sticky;
   top: 0;
+  z-index: 50;
   nav {
     display: flex;
     align-items: center;
@@ -15,12 +16,13 @@ header {
       padding: 0.525rem;
 
       li {
-        font-size: 0.9rem;
+        font-size: min(4.2vw, 1.325rem);
         color: lightgray;
         font-family: monospace;
         transition: color 2500ms ease;
         :hover {
           color: var(--accent);
+          font-weight: bold;
           border-bottom: solid 1px var(--foreground);
           transition: color 200ms ease;
         }

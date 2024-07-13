@@ -1,0 +1,66 @@
+.open-footer-btn {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  padding-left: 1rem;
+  padding-bottom: 0.525rem;
+  font-size: 1rem;
+  &:hover{
+    transition: font-size 250ms linear;
+    font-size: 1.2rem;
+  }
+}
+
+dialog[open] {
+  position: fixed !important;
+  z-index: 30;
+  width: 30rem;
+  color: var(--background);
+  background: var(--foreground);
+  filter: brightness(90%) invert(100%);
+  box-shadow: 0px -0.5px 0px 2px gray;
+
+  footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.225rem;
+    width: 100%;
+    height: 100%;
+
+    button {
+      margin-top: 1rem;
+      font-size: 1rem;
+      align-self: center;
+      &:hover {
+        transition: font-weight 250ms ease-in;
+        font-weight: bold;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 2vh;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: min(4.5vw, 1.22rem);
+      text-align: center;
+
+      li {
+        text-align: center;
+        padding-bottom: 3px;
+        border-bottom: 2px solid var(--background);
+        &:hover {
+          transition: border-bottom 350ms ease-in, padding-bottom, 250ms linear;
+          border-bottom-color: var(--accent);
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}

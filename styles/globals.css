@@ -61,7 +61,10 @@ main {
   color: var(--background);
   background: var(--foreground);
   border: 1px solid black;
-  transition: transform 0.2s ease-in-out, opacity 0.5s ease-in-out;
+  transition:
+    transform 0.2s ease-in-out,
+    opacity 0.5s ease-in-out;
+  z-index: 20;
 }
 
 .context-menu.hidden {
@@ -82,6 +85,7 @@ main {
   padding-top: 7px;
   padding-left: 0.525rem;
   border: 1px solid black;
+  cursor: pointer;
   :hover {
     transition:
       color 400ms,
@@ -96,3 +100,4 @@ main {
   text-decoration: none;
   color: black;
 }
+
