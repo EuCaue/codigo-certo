@@ -27,6 +27,7 @@
   .caret {
     display: inline-block;
     width: 1px;
+    line-height: 1.3;
     height: min(6vw, 2rem);
     margin-left: -0.7rem;
     background-color: var(--foreground);

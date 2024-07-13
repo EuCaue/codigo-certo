@@ -4,6 +4,11 @@
   --foreground: #ffffff;
 }
 
+*::selection {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
 * {
   scroll-snap-type: y mandatory;
   scrollbar-width: 0;
@@ -100,4 +105,3 @@ main {
   text-decoration: none;
   color: black;
 }
-

@@ -67,9 +67,10 @@ function typeWriter() {
 function handleCarousel() {
   const nextButton = document.querySelector("#next-carousel-item");
   const prevButton = document.querySelector("#prev-carousel-item");
+  const slidesContainer = document.querySelector(".slides");
   const slides = document.querySelectorAll(".slides > div");
   const observerOptions = {
-    root: document.querySelector(".slides"),
+    root: slidesContainer,
     threshold: 0.5,
   };
 
@@ -89,24 +90,31 @@ function handleCarousel() {
 
   prevButton.addEventListener("click", () => {
     if (currentSlide === 1) {
-      prevButton.href = "#slide-5";
+      slidesContainer.scrollTo({
+        left: slidesContainer.scrollWidth,
+      });
     } else {
-      prevButton.href = "#slide-" + (currentSlide - 1);
+      slidesContainer.scrollTo({
+        left: slidesContainer.scrollLeft - slidesContainer.clientWidth,
+      });
     }
   });
 
   nextButton.addEventListener("click", () => {
     if (currentSlide === 5) {
-      nextButton.href = "#slide-1";
+      slidesContainer.scrollTo({
+        left: 0,
+      });
     } else {
-      nextButton.href = "#slide-" + (currentSlide + 1);
+      slidesContainer.scrollTo({
+        left: slidesContainer.scrollLeft + slidesContainer.clientWidth,
+      });
     }
   });
 }
 
 function hideMenu() {
   const menu = document.querySelector("#contextMenu");
-  const isClickInside = menu.contains(event.target);
   menu.classList.add("hidden");
   setTimeout(() => {
     menu.style.display = "none";
@@ -152,9 +160,8 @@ function highlightText(element) {
       char.classList.toggle("highlighted", withinBounds);
     });
   });
-  //  NOTE: without removing give a efffect more read
   element.addEventListener("mouseleave", () => {
-    // element.innerHTML = originalText; // Remove os spans quando o mouse sai do elemento
+    // element.innerHTML = originalText; 
     // createSpans();
   });
 }
