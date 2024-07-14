@@ -86,9 +86,6 @@ main {
 }
 
 .context-menu ul li {
-  padding-bottom: 7px;
-  padding-top: 7px;
-  padding-left: 0.525rem;
   border: 1px solid black;
   cursor: pointer;
   :hover {
@@ -98,10 +95,19 @@ main {
     color: black;
     font-weight: bold;
   }
+
+  button {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 0.525rem;
+  }
 }
 
 .context-menu ul li a {
   display: block;
   text-decoration: none;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  padding-left: 0.525rem;
   color: black;
 }
