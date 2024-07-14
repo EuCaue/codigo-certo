@@ -5,7 +5,7 @@
   padding-left: 1rem;
   padding-bottom: 0.525rem;
   font-size: 1rem;
-  &:hover{
+  &:hover {
     transition: font-size 250ms linear;
     font-size: 1.2rem;
   }
@@ -29,11 +29,19 @@ dialog[open] {
     height: 100%;
 
     button {
+      display: block;
       margin-top: 1rem;
       font-size: 1rem;
       align-self: center;
+      border-bottom: 2px solid var(--background);
       &:hover {
-        transition: font-weight 250ms ease-in;
+        transition:
+          border-bottom 350ms ease-in,
+          padding-bottom,
+          250ms linear,
+          font-weight 175ms ease-in-out;
+        border-bottom-color: var(--accent);
+        padding-bottom: 5px;
         font-weight: bold;
       }
     }
@@ -51,9 +59,14 @@ dialog[open] {
         padding-bottom: 3px;
         border-bottom: 2px solid var(--background);
         &:hover {
-          transition: border-bottom 350ms ease-in, padding-bottom, 250ms linear;
+          transition:
+            border-bottom 350ms ease-in,
+            padding-bottom,
+            250ms linear,
+            font-weight 175ms ease-in-out;
           border-bottom-color: var(--accent);
           padding-bottom: 1px;
+          font-weight: bold;
         }
       }
     }
