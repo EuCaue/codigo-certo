@@ -33,9 +33,9 @@
 
 #info div span img {
   width: 320px;
-  height: 320px;
+  height: auto; 
   border-radius: 5px;
-  
+  object-fit: cover; 
 }
 
 #info div span span {
