@@ -20,23 +20,43 @@
       <nav>
         <ul>
           <li>
-            <a href="#info"> Informações</a>
+            <a
+              href="#info"
+              aria-label="Ir para a seção de Informações pessoais."
+              title="Ir para a seção de Informações pessoais."
+              >Informações</a
+            >
           </li>
           <li>
-            <a href="#sobre"> Sobre</a>
+            <a
+              href="#sobre"
+              aria-label="Ir para a seção Sobre."
+              title="Ir para a seção Sobre."
+              >Sobre</a
+            >
           </li>
           <li>
-            <a href="#gostos"> Gostos</a>
+            <a
+              href="#gostos"
+              aria-label="Ir para a seção Gostos."
+              title="Ir para a seção Gostos."
+              >Gostos</a
+            >
           </li>
           <li>
-            <a href="#motivacao"> Motivações </a>
+            <a
+              href="#motivacao"
+              aria-label="Ir para a seção Motivacão."
+              title="Ir para a seção Motivacão.."
+              >Motivações</a
+            >
           </li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="inicio" class="hero">
+      <section id="inicio" class="hero" aria-label="inicio do site">
         <p>
           Bem vindo a
           <a href="https://github.com/EuCaue/" rel="noreferrer" target="_blank"
@@ -49,15 +69,27 @@
             target="_blank"
             >trilha de frontend</a
           >
-          para o
-          <strong>Código Certo</strong>
+          para o <strong>Código Certo</strong>
           <span class="caret"></span>
         </p>
-        <a href="#info" class="down" title="Ir para a próxima seção"> ↓ </a>
+        <a
+          href="#info"
+          class="down"
+          title="Ir para a próxima seção"
+          aria-label="Ir para Informações Pessoais"
+        >
+          ↓
+        </a>
       </section>
 
-      <section id="info" class="hero">
-        <h1 data-text="Informações Pessoais">Informações Pessoais</h1>
+      <section
+        id="info"
+        class="hero"
+        aria-label="Informações sobre mim (Cauê Souza)"
+      >
+        <h1 id="info-heading" data-text="Informações Pessoais">
+          Informações Pessoais
+        </h1>
         <div>
           <span>
             <img src="./profile.jpg" alt="Minha foto de perfil" />
@@ -69,20 +101,21 @@
         </div>
       </section>
 
-      <section id="sobre" class="hero">
+      <section
+        id="sobre"
+        class="hero"
+        aria-label="Texto sobre mim. (Cauê Souza)"
+      >
         <div>
           <p>Oi! :)</p>
-
           <p class="text">
             Eu sou o Cauê, um desenvolvedor frontend que vive e respira código,
             de Salvador, BA.
           </p>
-
           <p class="text">
             Especialista em transformar café e sol em linhas de Javascript e
             TypeScript, já ia me esquecendo que tambem em NextJS. :)
           </p>
-
           <p class="text">
             Atualmente, estou cursando Análise e Desenvolvimento de Sistemas,
             porque, sabe como é, dormir é para os fracos!
@@ -95,39 +128,41 @@
         </div>
       </section>
 
-      <section id="gostos" class="hero">
-        <h1>Gostos Pessoais</h1>
+      <section
+        id="gostos"
+        class="hero"
+        aria-label="Meus gostos pessoais"
+        aria-labelledby="gostos-heading"
+      >
+        <h1 id="gostos-heading">Gostos Pessoais</h1>
         <div class="slider">
-          <div class="slides">
-            <div id="slide-1">
-              <h2>Música</h2>
+          <div class="slides" role="region" aria-live="polite">
+            <div id="slide-1" aria-labelledby="slide-1-heading">
+              <h2 id="slide-1-heading">Música</h2>
               <p>
                 Apaixonado por lofi, encontro inspiração e foco nas batidas
                 suaves enquanto estou codando. Sempre à procura de novos lofi's
                 para criar a trilha sonora perfeita para o meu dia.
               </p>
             </div>
-
-            <div id="slide-2">
-              <h2>Literatura</h2>
+            <div id="slide-2" aria-labelledby="slide-2-heading">
+              <h2 id="slide-2-heading">Literatura</h2>
               <p>
                 Aprecio uma boa leitura, especialmente tecnica e casos policias.
                 Adoro mergulhar em novos mundose explorar novas ideias através
                 das palavras.
               </p>
             </div>
-
-            <div id="slide-3">
-              <h2>Tecnologia</h2>
+            <div id="slide-3" aria-labelledby="slide-3-heading">
+              <h2 id="slide-3-heading">Tecnologia</h2>
               <p>
                 Entusiasta de gadgets e inovações tecnológicas. Gosto de estar
                 atualizado com as últimas novidades e explorar novas ferramentas
                 que podem melhorar meu trabalho.
               </p>
             </div>
-
-            <div id="slide-4">
-              <h2>Linux e Open Source</h2>
+            <div id="slide-4" aria-labelledby="slide-4-heading">
+              <h2 id="slide-4-heading">Linux e Open Source</h2>
               <p>
                 Apaixonado por Linux e a filosofia open source. Adoro contribuir
                 com projetos open source e participar de comunidades onde a
@@ -135,9 +170,8 @@
                 tudo.
               </p>
             </div>
-
-            <div id="slide-5">
-              <h2>Gatos</h2>
+            <div id="slide-5" aria-labelledby="slide-5-heading">
+              <h2 id="slide-5-heading">Gatos</h2>
               <p>
                 Amo meus gatinhos, e amo codar com juntos com eles, melhor
                 compania para meus dias. E sim, eles passam a maior parte do dia
@@ -146,48 +180,90 @@
             </div>
           </div>
           <span class="carousel-btns">
-            <a id="prev-carousel-item"> Prev </a>
-            <a id="next-carousel-item"> Next </a>
+            <a
+              id="prev-carousel-item"
+              href="#"
+              aria-label="Anterior slide"
+              role="button"
+              >Prev</a
+            >
+            <a
+              id="next-carousel-item"
+              href="#"
+              aria-label="Próximo slide"
+              role="button"
+              >Next</a
+            >
           </span>
         </div>
       </section>
 
-      <section class="hero" id="motivacao">
+      <section
+        id="motivacao"
+        class="hero"
+        aria-label="Minhas motivações para participar do projeto Código Certo"
+      >
         <p></p>
       </section>
 
-      <div id="contextMenu" class="context-menu" style="display: none">
+      <div
+        id="contextMenu"
+        class="context-menu"
+        style="display: none"
+        role="menu"
+      >
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#inicio">Início</a></li>
           <li><a href="#info">Informações</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#gostos">Gostos</a></li>
           <li><a href="#motivacao">Motivações</a></li>
           <li>
-            <buttton class="open-footer-btn-menu">Footer</buttton>
+            <button
+              class="open-footer-btn-menu"
+              aria-controls="footer-dialog"
+              aria-label="Abrir footer dialog"
+              title="Abrir footer dialog"
+            >
+              Footer
+            </button>
           </li>
         </ul>
       </div>
 
-      <button class="open-footer-btn">abrir footer</button>
+      <button
+        class="open-footer-btn"
+        aria-controls="footer-dialog"
+        aria-label="Abrir footer dialog"
+        title="Abrir footer dialog"
+      >
+        abrir footer
+      </button>
 
-      <dialog>
+      <dialog id="footer-dialog">
         <footer>
-        <ul>
-          <li>
-            <a href="https://www.github.com/EuCaue">github</a>
-          </li>
-
-          <li>
-            <a href="https://www.linkedin.com/caue-souza">linkedin</a>
-          </li>
-
-          <li>
-            <a href="https://github.com/EuCaue/codigo-certo">source</a>
-          </li>
-
-        </ul>
-          <button>close</button>
+          <ul role="menu">
+            <li>
+              <a href="https://www.github.com/EuCaue" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/caue-souza" target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EuCaue/codigo-certo" target="_blank"
+                >Source</a
+              >
+            </li>
+          </ul>
+          <button
+            aria-label="Fechar footer"
+            title="Fechar o footer"
+            aria-label="Fechar o footer"
+          >
+            close
+          </button>
         </footer>
       </dialog>
     </main>
