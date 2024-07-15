@@ -1,17 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("click", hideMenu);
+  document.addEventListener("contextmenu", rightClick);
+
   document.addEventListener("blur", () => {
     window.document.title = "Volta aqui poxa :/";
   });
+
   document.addEventListener("focus", () => {
     window.document.title = "Código Certo Trilha";
   });
+
   const textsToHighlight = document.querySelectorAll(".text");
   textsToHighlight.forEach((element) => {
     highlightText(element);
   });
 
-  document.addEventListener("click", hideMenu);
-  document.addEventListener("contextmenu", rightClick);
   handleCarousel();
   typeWriter();
   handleFooter();
@@ -34,7 +37,7 @@ function typeWriter() {
   const motivacaoSection = document.querySelector("#motivacao");
   const text = motivacaoSection.querySelector("p");
 
-  const typewriter = async () => {
+  const typewriterAnimation = async () => {
     for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
       const currentWord = words[wordIndex];
       for (
@@ -53,7 +56,7 @@ function typeWriter() {
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          typewriter();
+          typewriterAnimation();
           observer.unobserve(entry.target);
         }
       });
@@ -159,9 +162,5 @@ function highlightText(element) {
       }
       char.classList.toggle("highlighted", withinBounds);
     });
-  });
-  element.addEventListener("mouseleave", () => {
-    // element.innerHTML = originalText; 
-    // createSpans();
   });
 }
