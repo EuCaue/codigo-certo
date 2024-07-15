@@ -44,70 +44,7 @@ main {
   }
 }
 
-@keyframes close {
-  from {
-    display: block;
-    opacity: 1;
-  }
-  to {
-    display: none;
-    opacity: 0;
-  }
-}
-
 .hero {
   width: 100dvw;
   height: 100dvh;
-}
-
-.context-menu {
-  position: absolute;
-  text-align: center;
-  color: var(--background);
-  background: var(--foreground);
-  border: 1px solid black;
-  transition:
-    transform 0.2s ease-in-out,
-    opacity 0.5s ease-in-out;
-  z-index: 20;
-}
-
-.context-menu.hidden {
-  transform: scaleY(0);
-  opacity: 0;
-}
-
-.context-menu ul {
-  padding: 0px;
-  margin: 0px;
-  min-width: 150px;
-  list-style: none;
-  text-align: left;
-}
-
-.context-menu ul li {
-  border: 1px solid black;
-  cursor: pointer;
-  :hover {
-    transition:
-      color 400ms,
-      font-weight 250ms;
-    color: black;
-    font-weight: bold;
-  }
-
-  button {
-    padding-bottom: 7px;
-    padding-top: 7px;
-    padding-left: 0.525rem;
-  }
-}
-
-.context-menu ul li a {
-  display: block;
-  text-decoration: none;
-  padding-bottom: 7px;
-  padding-top: 7px;
-  padding-left: 0.525rem;
-  color: black;
 }
